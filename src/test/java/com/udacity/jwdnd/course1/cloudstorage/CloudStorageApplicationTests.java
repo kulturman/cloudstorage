@@ -28,13 +28,18 @@ class CloudStorageApplicationTests {
 	@AfterEach
 	public void afterEach() {
 		if (this.driver != null) {
-			driver.quit();
+			//driver.quit();
 		}
 	}
+	
+	@Test
+	public
 
 	@Test
 	public void getLoginPage() {
+		Page loginPage = new Page(driver);
 		driver.get("http://localhost:" + this.port + "/login");
+		loginPage.logIn("kk", "kk");
 		Assertions.assertEquals("Login", driver.getTitle());
 	}
 
